@@ -12,6 +12,17 @@ class DrawerPage extends StatefulWidget {
   State<DrawerPage> createState() => _DrawerPageState();
 }
 
+class ButtonsInfo {
+  String title;
+  IconData icon;
+
+  ButtonsInfo({required this.title, required this.icon});
+}
+
+int _currentIndex = 0;
+
+List<ButtonsInfo> _buttonNames = [ButtonsInfo(title: "Home", icon: Icons.home)];
+
 class _DrawerPageState extends State<DrawerPage> {
   @override
   Widget build(BuildContext context) {
@@ -32,12 +43,22 @@ class _DrawerPageState extends State<DrawerPage> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      
                       icon: Icon(
                         Icons.close,
                         color: Colors.white,
                       ),
                     ),
+            ),
+            ...List.generate(
+              _buttonNames.length,
+              (index) => Column(children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    gradient: LinearGradient(colors: [purpleDark,orangeDark]),)
+                  ),
+                
+              ]),
             ),
           ],
         ),
