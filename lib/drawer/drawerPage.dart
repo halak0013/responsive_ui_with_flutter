@@ -21,7 +21,16 @@ class ButtonsInfo {
 
 int _currentIndex = 0;
 
-List<ButtonsInfo> _buttonNames = [ButtonsInfo(title: "Home", icon: Icons.home)];
+List<ButtonsInfo> _buttonNames = [
+  ButtonsInfo(title: "Home", icon: Icons.home),
+  ButtonsInfo(title: "Setting", icon: Icons.settings),
+  ButtonsInfo(title: "Notifications", icon: Icons.notifications),
+  ButtonsInfo(title: "Contacts", icon: Icons.contact_phone_rounded),
+  ButtonsInfo(title: "Sales", icon: Icons.sell),
+  ButtonsInfo(title: "Marketing", icon: Icons.mark_email_read),
+  ButtonsInfo(title: "Security", icon: Icons.verified_user),
+  ButtonsInfo(title: "Users", icon: Icons.supervised_user_circle_rounded),
+];
 
 class _DrawerPageState extends State<DrawerPage> {
   @override
@@ -51,14 +60,44 @@ class _DrawerPageState extends State<DrawerPage> {
             ),
             ...List.generate(
               _buttonNames.length,
-              (index) => Column(children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    gradient: LinearGradient(colors: [purpleDark,orangeDark]),)
+              (index) => Column(
+                children: [
+                  Container(
+                    decoration: index == _currentIndex
+                        ? BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            gradient: LinearGradient(colors: [
+                              red.withOpacity(0.9),
+                              orange.withOpacity(0.9),
+                            ]),
+                          )
+                        : null,
+                    child: ListTile(
+                      title: Text(
+                        _buttonNames[index].title,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      leading: Padding(
+                        padding: const EdgeInsets.all(kPadding),
+                        child:
+                            Icon(_buttonNames[index].icon, color: Colors.white),
+                      ),
+                      onTap: () {
+                        setState(() {
+                          _currentIndex = index;
+                        });
+                      },
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
                   ),
-                
-              ]),
+                  Divider(
+                    color: Colors.white,
+                    thickness: 0.1,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
