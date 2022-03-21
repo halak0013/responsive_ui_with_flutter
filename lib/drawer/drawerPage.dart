@@ -67,8 +67,8 @@ class _DrawerPageState extends State<DrawerPage> {
                         ? BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             gradient: LinearGradient(colors: [
-                              red.withOpacity(0.9),
-                              orange.withOpacity(0.9),
+                              kred.withOpacity(0.9),
+                              korange.withOpacity(0.9),
                             ]),
                           )
                         : null,

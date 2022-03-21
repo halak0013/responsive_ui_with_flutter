@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
 import 'widget_tree.dart';
 
 void main() {
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'Admin Panel',
       theme: ThemeData(
         primarySwatch: Colors.orange,
-        scaffoldBackgroundColor: Colors.black45,
-        canvasColor: Color.fromARGB(255, 54, 17, 15),
+        scaffoldBackgroundColor: purpleDark,
+        canvasColor: purpleLight,
       ),
       home: WidgetTree(),
     );
