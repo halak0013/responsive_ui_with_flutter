@@ -60,7 +60,7 @@ class _PanelRightPageState extends State<PanelRightPage> {
                     ),
                     trailing: Chip(
                       label: Text(
-                        r"$46,450",
+                        r"46,450 TL",
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
