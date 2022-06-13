@@ -3,7 +3,7 @@
 A new Flutter project.
 
 
-I got help from this video[https://www.youtube.com/watch?v=n7O3pXfENPU&t=524s] in this project
+I got help from this [video][https://www.youtube.com/watch?v=n7O3pXfENPU&t=524s] in this project
 and changed some null safty issue and colors
 
 Computer mode
