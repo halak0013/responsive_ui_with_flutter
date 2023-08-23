@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_ui_with_flutter/constants.dart';
 
-import '../drawer/drawerPage.dart';
 import '../responsive_layout.dart';
 
 List<String> _buttonNames = ["Overview", "Revenue", "Sales", "Control"];
-int _currentSellectedButton = 0;
+int _currentSelectedButton = 0;
 
 class AppBarWidget extends StatefulWidget {
   const AppBarWidget({Key? key}) : super(key: key);
@@ -58,7 +57,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
               (index) => TextButton(
                 onPressed: () {
                   setState(() {
-                    _currentSellectedButton = index;
+                    _currentSelectedButton = index;
                   });
                 },
                 child: Padding(
@@ -70,7 +69,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                       Text(
                         _buttonNames[index],
                         style: TextStyle(
-                            color: _currentSellectedButton == index
+                            color: _currentSelectedButton == index
                                 ? Colors.white
                                 : Colors.white70),
                       ),
@@ -79,7 +78,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                         width: 60,
                         height: 2,
                         decoration: BoxDecoration(
-                          gradient: _currentSellectedButton == index
+                          gradient: _currentSelectedButton == index
                               ? LinearGradient(
                                   colors: [kred, korange],
                                 )
@@ -99,7 +98,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    _buttonNames[_currentSellectedButton],
+                    _buttonNames[_currentSelectedButton],
                     style: TextStyle(color: Colors.white),
                   ),
                   Container(
